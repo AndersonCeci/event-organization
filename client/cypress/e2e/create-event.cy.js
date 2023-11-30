@@ -23,7 +23,7 @@ describe("it will create an event", () => {
     cy.get('[data-test="create-event-location-input"]').type(
       "Cypress Location"
     );
-    cy.get('[data-test="create-event-button"]').click({multiple: true});
+    cy.get('[data-test="create-event-button-input"]').click({multiple: true});
     cy.url().should("include", "/");
     cy.get('[data-test="event-name-home"]').contains("Cypress");
   });

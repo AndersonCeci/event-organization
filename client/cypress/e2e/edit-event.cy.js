@@ -16,7 +16,7 @@ describe("it will edit an event", () => {
         cy.get('[data-test="edit-event-name-input"]').type("Cypress Test");
         cy.get('[data-test="edit-event-description-input"]').clear();
         cy.get('[data-test="edit-event-description-input"]').type("Cypress Description Edited");
-        cy.get('[data-test="save-changes-button"]').click();
+        cy.get('[data-test="save-changes-button"]').click({multiple: true});
         cy.get('[data-test="event-name-edited"]').contains("Cypress Test");
         cy.get('[data-test="event-description-edited"]').contains("Cypress Description Edited");
         cy.visit("http://localhost:3000/");
