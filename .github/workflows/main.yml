@@ -6,12 +6,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Node.js and install Dependecies
-        uses: actions/setup-node@v2
-        
+      
       - name: Cypress run
         uses: cypress-io/github-action@v6
-er
+        
       - uses: actions/upload-artifact@v3
         if: failure()
         with:
