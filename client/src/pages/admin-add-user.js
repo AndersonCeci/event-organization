@@ -14,7 +14,7 @@ export const AdminAddUser = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("https://event-organization-n2w5.onrender.com/register", {
+      await axios.post("https://event-organization-n2w5.onrender.com/auth/register", {
         name,
         email,
         password,

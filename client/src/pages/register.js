@@ -23,7 +23,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault(); 
     try {
       await axios.post("https://event-organization-n2w5.onrender.com/auth/register", {
         name,
