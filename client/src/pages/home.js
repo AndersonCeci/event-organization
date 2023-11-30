@@ -10,7 +10,7 @@ export const Home = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/events");
+        const response = await axios.get("https://event-organization-n2w5.onrender.com/events");
         setEventData(response.data);
       } catch (err) {
         console.error(err);

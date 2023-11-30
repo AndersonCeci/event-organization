@@ -29,7 +29,7 @@ export const CreateEvent = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:4000/events", eventData);
+      const response = await axios.post("https://event-organization-n2w5.onrender.com/events", eventData);
       const createdEventID = response.data._id;
 
       localStorage.setItem("eventID", createdEventID);

@@ -11,7 +11,7 @@ export const AdminUserHome = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/users");
+        const response = await axios.get("https://event-organization-n2w5.onrender.com/users");
         setUsers(response.data);
       } catch (error) {
         console.error("Error fetching users:", error);
@@ -23,7 +23,7 @@ export const AdminUserHome = () => {
 
   const deleteUser = async (userId) => {
     try {
-      await axios.delete(`http://localhost:4000/users/${userId}`);
+      await axios.delete(`https://event-organization-n2w5.onrender.com/users/${userId}`);
       setUsers(users.filter((user) => user._id !== userId));
     } catch (error) {
       console.error("Error deleting user:", error);

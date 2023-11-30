@@ -26,7 +26,7 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const result = await axios.post("http://localhost:4000/auth/login", {
+      const result = await axios.post("https://event-organization-n2w5.onrender.com/auth/login", {
         email,
         password,
         secretCode,

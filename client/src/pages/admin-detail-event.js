@@ -26,7 +26,7 @@ export const AdminEventDetails = () => {
     const fetchEventsDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/events/${eventId}`
+          `https://event-organization-n2w5.onrender.com/events/${eventId}`
         );
         setEventData(response.data);
         setAttendeeData(response.data.attendees || []);
@@ -58,7 +58,7 @@ export const AdminEventDetails = () => {
   const saveChanges = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:4000/events/${eventId}`,
+        `https://event-organization-n2w5.onrender.com/events/${eventId}`,
         editedEvent
       );
       setEventData(response.data);
@@ -70,7 +70,9 @@ export const AdminEventDetails = () => {
 
   const deleteEvent = async () => {
     try {
-      await axios.delete(`http://localhost:4000/events/${eventId}`);
+      await axios.delete(
+        `https://event-organization-n2w5.onrender.com/events/${eventId}`
+      );
       navigate("/admin");
     } catch (err) {
       console.error(err);

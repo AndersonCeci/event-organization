@@ -27,7 +27,7 @@ export const EventDetails = () => {
     const fetchEventsDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/events/${eventId}`
+          `https://event-organization-n2w5.onrender.com/events/${eventId}`
         );
         setEventData(response.data);
         setAttendeeData(response.data.attendees || []);
@@ -66,7 +66,7 @@ export const EventDetails = () => {
       }
 
       const response = await axios.put(
-        `http://localhost:4000/events/${eventId}`,
+        `https://event-organization-n2w5.onrender.com/events/${eventId}`,
         editedEvent
       );
       setEventData(response.data);
@@ -86,7 +86,7 @@ export const EventDetails = () => {
         return;
       }
 
-      const response = await axios.post("http://localhost:4000/attendee/join", {
+      const response = await axios.post("https://event-organization-n2w5.onrender.com/attendee/join", {
         eventId,
         userId: userID,
         attendeeName: attendeeName,
@@ -109,7 +109,7 @@ export const EventDetails = () => {
         return;
       }
 
-      await axios.delete(`http://localhost:4000/events/${eventId}`);
+      await axios.delete(`https://event-organization-n2w5.onrender.com/events/${eventId}`);
       navigate("/");
       toast.success("Event deleted successfully!");
     } catch (err) {
