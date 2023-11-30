@@ -17,13 +17,23 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Install Dependencies
+      - name: Install Client Dependencies
         run: |
           cd client
           npm install
 
-      - name: Cypress run
+      - name: Install Server Dependencies
+        run: |
+          cd server
+          npm install
+
+      - name: Start Server
+        run: |
+          cd server
+          npm start &
+
+      - name: Cypress run for Client
         uses: cypress-io/github-action@v6
         with:
           working-directory: client
-          start: npm run start:mock-with-server
+          start: npm start
